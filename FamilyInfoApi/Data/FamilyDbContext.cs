@@ -15,5 +15,8 @@ namespace FamilyInfoApi.Data
         }
 
         public DbSet<Info> infos { get; set; }
+        public DbSet<Cast> Casts { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<MaritialStatus> MaritialStatuses { get; set; }
     }
 }
