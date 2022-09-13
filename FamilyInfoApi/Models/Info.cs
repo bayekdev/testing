@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,12 +23,21 @@ namespace FamilyInfoApi.Models
         public string LastName { get; set; }
         [Required]
         public int Age { get; set; }
+
         [Required]
-        public int Gender { get; set; }
+        public int GenderId { get; set; }
+
+        [ForeignKey("GenderId")]
+        public Gender Gender { get; set; }
         [Required]
-        public string Cast { get; set; }
+        public int CastId { get; set; }
+        [ForeignKey("CastId")]
+        public Cast Cast { get; set; }
         [Required]
-        public string MaritalStatus { get; set; }
+        public int MaritialId { get; set; }
+        [ForeignKey("MaritialId")]
+        public MaritialStatus Maritial { get; set; }
+       
         [Required]
         public int MobileNo { get; set; }
     }
